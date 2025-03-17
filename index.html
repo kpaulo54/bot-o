@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão de Aumentar/Diminuir Fonte</title>
+    <style>
+        .texto {
+            font-size: 16px; /* Tamanho inicial da fonte */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="texto" id="texto">
+        Este é um exemplo de texto que pode ter o tamanho da fonte alterado.
+    </div>
+
+    <button onclick="aumentarFonte()">Aumentar Fonte</button>
+    <button onclick="diminuirFonte()">Diminuir Fonte</button>
+
+    <script>
+        function aumentarFonte() {
+            var texto = document.getElementById("texto");
+            var tamanhoAtual = window.getComputedStyle(texto, null).getPropertyValue('font-size');
+            var novoTamanho = parseInt(tamanhoAtual) + 2; // Aumenta 2px
+            texto.style.fontSize = novoTamanho + 'px';
+        }
+
+        function diminuirFonte() {
+            var texto = document.getElementById("texto");
+            var tamanhoAtual = window.getComputedStyle(texto, null).getPropertyValue('font-size');
+            var novoTamanho = parseInt(tamanhoAtual) - 2; // Diminui 2px
+            texto.style.fontSize = novoTamanho + 'px';
+        }
+    </script>
+
+</body>
+</html>
